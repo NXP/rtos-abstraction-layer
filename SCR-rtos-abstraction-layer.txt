@@ -1,0 +1,10 @@
+NXP Software Content Register
+Release Name:       rtos-abstraction-layer
+Version:            0_1_0
+Date Created:       November-2023
+Outgoing License:   BSD-3 Clause
+License File:       LICENSE.txt
+Release Location:   https://github.com/NXP/rtos-abstraction-layer
+Description:        An abstraction layer for Real-Time Operating Systems.
+Origin:             NXP (MIT, BSD-3-Clause)
+                    Amazon FreeRTOS-Kernel (MIT) - https://github.com/nxp-mcuxpresso/FreeRTOS-Kernel.git (V10.5.0)
