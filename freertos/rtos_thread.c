@@ -13,8 +13,8 @@ int rtos_thread_create(rtos_thread_t *thread, unsigned int priority, unsigned in
     BaseType_t ret;
 
     ret = xTaskCreate(start_routine, name,
-                      (stack_size < configMINIMAL_STACK_SIZE)? configMINIMAL_STACK_SIZE: stack_size,
-                      arg, (priority > configMAX_PRIORITIES)? configMAX_PRIORITIES: priority,
+                      (stack_size < configMINIMAL_STACK_SIZE) ? configMINIMAL_STACK_SIZE: stack_size,
+                      arg, (priority >= configMAX_PRIORITIES) ? configMAX_PRIORITIES - 1: priority,
                       &thread->handle);
 
     return (ret != pdPASS)? -1 : 0;
