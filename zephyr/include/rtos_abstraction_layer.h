@@ -20,6 +20,7 @@
 #include "rtos_mutex.h"
 #include "rtos_mqueue.h"
 #include "rtos_sched.h"
+#include "rtos_semaphore.h"
 #include "rtos_thread.h"
 #include "rtos_time.h"
 #include "rtos_timer.h"
