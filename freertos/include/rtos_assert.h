@@ -10,7 +10,10 @@
 
 #define rtos_assert(expr, fmt, ...)       \
 do { \
-    configASSERT(expr); \
-} while(0)
+    if (!(expr)) { \
+        configASSERT(expr); \
+        while (1); \
+    } \
+} while (0)
 
 #endif /* #ifndef _RTOS_ABSTRACTION_LAYER_ASSERT_H_ */
