@@ -8,9 +8,12 @@
 
 #include <zephyr/kernel.h>
 
-static inline void rtos_assert(int expr)
-{
-    __ASSERT(expr, "");
-}
+#define rtos_assert(expr, msg, ...)       \
+do { \
+    if (unlikely(!(expr))) {    \
+        __ASSERT(expr, msg, ##__VA_ARGS__);  \
+        while(1);   \
+    }   \
+} while(0)
 
 #endif /* #ifndef _RTOS_ABSTRACTION_LAYER_ASSERT_H_ */

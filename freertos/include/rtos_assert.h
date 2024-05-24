@@ -8,9 +8,9 @@
 
 #include "FreeRTOS.h"
 
-static inline void rtos_assert(int expr)
-{
-    configASSERT(expr);
-}
+#define rtos_assert(expr, fmt, ...)       \
+do { \
+    configASSERT(expr); \
+} while(0)
 
 #endif /* #ifndef _RTOS_ABSTRACTION_LAYER_ASSERT_H_ */
