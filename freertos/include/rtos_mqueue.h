@@ -134,6 +134,32 @@ static inline int rtos_mqueue_peek(rtos_mqueue_t *mq, void *item, rtos_tick_t ti
     return (ret == pdTRUE) ? 0 : -1;
 }
 
+/** Get the number of messages stored in a queue.
+ *
+ * This function can't be called from an ISR.
+ *
+ * \ingroup rtos_queue
+ * \return 	the number of messages in the queue.
+ * \param 	mq Pointer to the queue.
+ */
+static inline unsigned int rtos_mqueue_pending(rtos_mqueue_t *mq)
+{
+    return (unsigned int)uxQueueMessagesWaiting(mq->handle);
+}
+
+/** Get the number of messages stored in a queue.
+ *
+ * This function can be called from an ISR.
+ *
+ * \ingroup rtos_queue
+ * \return 	the number of messages in the queue.
+ * \param 	mq Pointer to the queue.
+ */
+static inline unsigned int rtos_mqueue_pending_from_isr(rtos_mqueue_t *mq)
+{
+    return (unsigned int)uxQueueMessagesWaitingFromISR(mq->handle);
+}
+
 /** Allocate and initialize a queue.
  *
  * This function allocates and initializes a queue.
