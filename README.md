@@ -13,6 +13,7 @@ Supported RTOS services
 - queues
 - memory heap
 - atomic operations
+- basic standard output
 
 Using the RTOS Abstraction Layer
 ------------------------------

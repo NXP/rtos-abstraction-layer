@@ -12,6 +12,7 @@ message("rtos_abstraction_layer_zephyr sources are included for target ${RTOS_AB
 target_sources(${RTOS_ABSTRACTION_LAYER_TARGET} PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/rtos_mqueue.c
     ${CMAKE_CURRENT_LIST_DIR}/rtos_sched.c
+    ${CMAKE_CURRENT_LIST_DIR}/rtos_stdio.c
     ${CMAKE_CURRENT_LIST_DIR}/rtos_thread.c
     ${CMAKE_CURRENT_LIST_DIR}/rtos_timer.c
 )
