@@ -6,7 +6,7 @@
 
 /**
  @file
- @brief Top header file to include FreeRTOS' API
+ @brief Top header file to include rtos-abstraction-layer's API
  @details
 */
 
