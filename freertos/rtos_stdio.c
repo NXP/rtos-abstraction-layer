@@ -3,8 +3,13 @@
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
-#include "fsl_debug_console.h"
 #include "rtos_stdio.h"
+
+/*
+ * Duplicated declaration of function found in MCUX SDK:
+ * - devices/<device>/utilities/debug_console/fsl_debug_console.h
+ */
+extern int DbgConsole_Vprintf(const char *fmt, va_list ap);
 
 void rtos_printf(const char *fmt_s, ...)
 {
