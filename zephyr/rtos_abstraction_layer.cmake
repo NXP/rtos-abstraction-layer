@@ -4,7 +4,7 @@ target_include_directories(${RTOS_ABSTRACTION_LAYER_TARGET} PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/include
 )
 
-target_link_libraries(${RTOS_ABSTRACTION_LAYER_TARGET} PUBLIC zephyr_interface)
+target_link_libraries(${RTOS_ABSTRACTION_LAYER_TARGET} PUBLIC zephyr_interface kernel)
 
 include_guard(GLOBAL)
 message("rtos_abstraction_layer_zephyr sources are included for target ${RTOS_ABSTRACTION_LAYER_TARGET}")
