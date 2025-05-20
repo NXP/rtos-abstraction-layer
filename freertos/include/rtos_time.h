@@ -45,7 +45,7 @@ static inline unsigned int RTOS_TICKS_TO_UINT(rtos_tick_t ticks)
     return ticks;
 }
 
-static inline uint64_t rtos_get_current_time()
+static inline uint64_t rtos_get_current_time(void)
 {
     return xTaskGetTickCount();
 }
