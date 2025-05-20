@@ -10,7 +10,7 @@
 struct __rtos_timer_t {
     TimerHandle_t handle;
     void *data;
-    void (*callback)(struct _rtos_timer_t *, void *);
+    void (*callback)(struct _rtos_timer_t *timer, void *data);
     bool is_static;
 };
 

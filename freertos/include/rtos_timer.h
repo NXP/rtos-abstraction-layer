@@ -14,12 +14,12 @@
 typedef struct _rtos_timer_t {
     TimerHandle_t handle;
     void *data;
-    void (*callback)(struct _rtos_timer_t *, void *);
+    void (*callback)(struct _rtos_timer_t *timer, void *data);
     bool is_static;
     StaticTimer_t storage;
 } rtos_timer_t;
 
-typedef void (*rtos_timer_callback_t)(rtos_timer_t *timer, void *);
+typedef void (*rtos_timer_callback_t)(rtos_timer_t *timer, void *data);
 
 /** Start a timer.
  *

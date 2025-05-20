@@ -16,12 +16,12 @@
 typedef struct _rtos_timer_t {
     struct k_timer timer;
     void *data;
-    void (*callback)(struct _rtos_timer_t *, void *);
+    void (*callback)(struct _rtos_timer_t *timer, void *data);
     uint32_t status;
     const char *name;
 } rtos_timer_t;
 
-typedef void (*rtos_timer_callback_t)(rtos_timer_t *timer, void *);
+typedef void (*rtos_timer_callback_t)(rtos_timer_t *timer, void *data);
 
 /** Start a timer.
  *
