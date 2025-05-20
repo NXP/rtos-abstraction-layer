@@ -17,7 +17,7 @@ static void rtos_thread_callback(void * p1, void * p2, void * p3)
 
 int rtos_thread_create(rtos_thread_t *thread, unsigned int priority, unsigned int affinity,
                        size_t stack_size, const char *name,
-                       void (*start_routine)(void *), void *arg)
+                       void (*start_routine)(void *arg), void *arg)
 {
     int thread_priority;
     size_t stack_depth;

@@ -8,7 +8,7 @@
 
 int rtos_thread_create(rtos_thread_t *thread, unsigned int priority, unsigned int affinity,
                        size_t stack_size, const char *name,
-                       void (*start_routine)(void *), void *arg)
+                       void (*start_routine)(void *arg), void *arg)
 {
     BaseType_t ret;
 
