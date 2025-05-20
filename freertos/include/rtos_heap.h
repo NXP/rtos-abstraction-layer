@@ -15,7 +15,7 @@ static inline void *rtos_malloc(size_t size)
 
 static inline void rtos_free(void *pointer)
 {
-    return vPortFree(pointer);
+    vPortFree(pointer);
 }
 
 #endif /* _RTOS_ABSTRACTION_LAYER_HEAP_H_ */
