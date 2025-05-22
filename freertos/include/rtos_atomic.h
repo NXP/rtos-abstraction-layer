@@ -32,12 +32,12 @@ unsigned int rtos_atomic_xchg(rtos_atomic_t *addr, unsigned int new);
 
 static inline void rtos_atomic_inc(rtos_atomic_t *addr)
 {
-	rtos_atomic_add(1, addr);
+	rtos_atomic_add(1U, addr);
 }
 
 static inline void rtos_atomic_dec(rtos_atomic_t *addr)
 {
-	rtos_atomic_sub(1, addr);
+	rtos_atomic_sub(1U, addr);
 }
 
 static inline void rtos_atomic_clear_bit(unsigned int nr, rtos_atomic_t *addr)
@@ -46,7 +46,7 @@ static inline void rtos_atomic_clear_bit(unsigned int nr, rtos_atomic_t *addr)
 
 	taskENTER_CRITICAL();
 
-	*word &= ~(1 << (nr & ATOMIC_MASK));
+	*word &= ~(1U << (nr & ATOMIC_MASK));
 
 	taskEXIT_CRITICAL();
 }
@@ -57,7 +57,7 @@ static inline void rtos_atomic_set_bit(unsigned int nr, rtos_atomic_t *addr)
 
 	taskENTER_CRITICAL();
 
-	*word |= (1 << (nr & ATOMIC_MASK));
+	*word |= (1U << (nr & ATOMIC_MASK));
 
 	taskEXIT_CRITICAL();
 }
@@ -69,7 +69,7 @@ static inline int rtos_atomic_test_bit(unsigned int nr, rtos_atomic_t *addr)
 
 	taskENTER_CRITICAL();
 
-	ret = (*word & (1 << (nr & ATOMIC_MASK)));
+	ret = (*word & (1U << (nr & ATOMIC_MASK)));
 
 	taskEXIT_CRITICAL();
 
@@ -83,8 +83,8 @@ static inline int rtos_atomic_test_and_clear_bit(unsigned int nr, rtos_atomic_t 
 
 	taskENTER_CRITICAL();
 
-	ret = (*word & (1 << (nr & ATOMIC_MASK)));
-	*word &= ~(1 << (nr & ATOMIC_MASK));
+	ret = (*word & (1U << (nr & ATOMIC_MASK)));
+	*word &= ~(1U << (nr & ATOMIC_MASK));
 
 	taskEXIT_CRITICAL();
 
@@ -98,8 +98,8 @@ static inline int rtos_atomic_test_and_set_bit(unsigned int nr, rtos_atomic_t *a
 
 	taskENTER_CRITICAL();
 
-	ret = (*word & (1 << (nr & ATOMIC_MASK)));
-	*word |= (1 << (nr & ATOMIC_MASK));
+	ret = (*word & (1U << (nr & ATOMIC_MASK)));
+	*word |= (1U << (nr & ATOMIC_MASK));
 
 	taskEXIT_CRITICAL();
 
