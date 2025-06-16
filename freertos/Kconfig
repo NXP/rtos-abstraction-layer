@@ -1,0 +1,5 @@
+config MCUX_COMPONENT_component.rtos_abstraction_layer_freertos
+    bool "FreeRTOS RTOS Abstraction Layer"
+
+    if MCUX_COMPONENT_component.rtos_abstraction_layer_freertos
+    endif

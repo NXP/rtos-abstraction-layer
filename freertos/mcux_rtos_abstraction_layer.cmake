@@ -1,3 +1,5 @@
+
+if(CONFIG_MCUX_COMPONENT_component.rtos_abstraction_layer_freertos)
 message("rtos_abstraction_layer (freertos) headers are included for target ${RTOS_ABSTRACTION_LAYER_TARGET}")
 
 mcux_add_include(
@@ -18,3 +20,4 @@ mcux_add_source(
     rtos_thread.c
     include/*.h
 )
+endif()
