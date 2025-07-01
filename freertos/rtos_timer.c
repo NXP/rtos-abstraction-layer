@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 NXP
+ * Copyright 2024-2025 NXP
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -87,4 +87,3 @@ int rtos_timer_destroy(rtos_timer_t *timer, rtos_tick_t expiry_time)
 err:
     return -1;
 }
-

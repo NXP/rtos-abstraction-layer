@@ -1,8 +1,9 @@
 /*
- * Copyright 2024 NXP
+ * Copyright 2024-2025 NXP
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
+
 #ifndef _RTOS_ABSTRACTION_LAYER_TASK_H_
 #define _RTOS_ABSTRACTION_LAYER_TASK_H_
 
