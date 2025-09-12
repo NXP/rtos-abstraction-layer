@@ -27,7 +27,7 @@ int rtos_timer_init(rtos_timer_t *timer, const char *name, bool periodic, rtos_t
     timer->callback = callback;
 
     /* uses a callback as interface to use a TimerCallbackFunction_t function as input and use a rtos_timer_callback_t behind the hood */
-    timer->handle = xTimerCreateStatic(name, portMAX_DELAY, periodic, timer, rtos_timer_callback, &timer->storage);
+    timer->handle = xTimerCreateStatic(name, portMAX_DELAY, periodic, timer, &rtos_timer_callback, &timer->storage);
     if (!timer->handle)
         goto err;
 
@@ -52,7 +52,7 @@ rtos_timer_t *rtos_timer_alloc_init(const char *name, bool periodic, rtos_timer_
     timer->callback = callback;
 
     /* use a callback as interface to use a TimerCallbackFunction_t function as input and use a rtos_timer_callback_t behind the hood */
-    timer->handle = xTimerCreate(name, portMAX_DELAY, periodic, timer, rtos_timer_callback);
+    timer->handle = xTimerCreate(name, portMAX_DELAY, periodic, timer, &rtos_timer_callback);
     if (!timer->handle)
         goto err_init;
 

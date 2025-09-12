@@ -1,5 +1,5 @@
 /*
-* Copyright 2023-2024 NXP
+* Copyright 2023-2025 NXP
 *
 * SPDX-License-Identifier: BSD-3-Clause
 */
@@ -48,12 +48,12 @@ static inline rtos_atomic_t rtos_atomic_xchg(rtos_atomic_t *addr, unsigned int n
 
 static inline void rtos_atomic_clear_bit(unsigned int nr, rtos_atomic_t *addr)
 {
-    return atomic_clear_bit(addr, nr);
+    atomic_clear_bit(addr, nr);
 }
 
 static inline void rtos_atomic_set_bit(unsigned int nr, rtos_atomic_t *addr)
 {
-    return atomic_set_bit(addr, nr);
+    atomic_set_bit(addr, nr);
 }
 
 static inline int rtos_atomic_test_and_set_bit(unsigned int nr, rtos_atomic_t *addr)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 NXP
+ * Copyright 2024-2025 NXP
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -15,7 +15,7 @@ static void rtos_timer_callback(struct k_timer *timer)
 
 int rtos_timer_init(rtos_timer_t *timer, const char *name, bool periodic, rtos_timer_callback_t callback, void *data)
 {
-    k_timer_init(&(timer->timer), rtos_timer_callback, NULL);
+    k_timer_init(&(timer->timer), &rtos_timer_callback, NULL);
 
     timer->name = name;
     timer->data = data;

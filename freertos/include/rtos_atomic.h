@@ -69,7 +69,7 @@ static inline int rtos_atomic_test_bit(unsigned int nr, rtos_atomic_t *addr)
 
 	taskENTER_CRITICAL();
 
-	ret = (*word & (1U << (nr & ATOMIC_MASK)));
+	ret = !!(*word & (1U << (nr & ATOMIC_MASK)));
 
 	taskEXIT_CRITICAL();
 
@@ -83,7 +83,7 @@ static inline int rtos_atomic_test_and_clear_bit(unsigned int nr, rtos_atomic_t 
 
 	taskENTER_CRITICAL();
 
-	ret = (*word & (1U << (nr & ATOMIC_MASK)));
+	ret = !!(*word & (1U << (nr & ATOMIC_MASK)));
 	*word &= ~(1U << (nr & ATOMIC_MASK));
 
 	taskEXIT_CRITICAL();
@@ -98,7 +98,7 @@ static inline int rtos_atomic_test_and_set_bit(unsigned int nr, rtos_atomic_t *a
 
 	taskENTER_CRITICAL();
 
-	ret = (*word & (1U << (nr & ATOMIC_MASK)));
+	ret = !!(*word & (1U << (nr & ATOMIC_MASK)));
 	*word |= (1U << (nr & ATOMIC_MASK));
 
 	taskEXIT_CRITICAL();

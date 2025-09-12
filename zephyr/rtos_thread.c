@@ -33,7 +33,7 @@ int rtos_thread_create(rtos_thread_t *thread, unsigned int priority, unsigned in
        goto err_alloc;
 
     thread_id = k_thread_create(&thread->thread, thread->stack, stack_depth,
-                                 rtos_thread_callback, start_routine, arg, NULL,
+                                 &rtos_thread_callback, start_routine, arg, NULL,
                                  thread_priority, 0, K_FOREVER);
     if (!thread_id)
        goto err;
