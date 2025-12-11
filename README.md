@@ -16,10 +16,37 @@ Supported RTOS services
 - basic standard output
 
 Using the RTOS Abstraction Layer
-------------------------------
-On the applications' CMake, add the following lines:
-
+--------------------------------
 #### FreeRTOS
+
+##### MCUX SDK (version 25.06 onward) - West Build System
+
+When using MCUX SDK NG with the west build system, the RTOS Abstraction Layer is integrated through Kconfig configuration.
+
+#### Configuration
+
+Add the following configuration to your application's `prj.conf` file:
+
+```bash
+CONFIG_MCUX_COMPONENT_component.rtos_abstraction_layer_freertos=y
+```
+
+In your application's Kconfig, source the rtos-abstraction-layer's Kconfig as follows:
+
+```bash
+source /path/to/rtos-abstraction-layer/freertos/Kconfig
+```
+
+Include the CMake file as follows:
+
+```cmake
+include(/path/to/rtos-abstraction-layer/freertos/mcux_rtos_abstraction_layer.cmake)
+```
+
+##### MCUX SDK Legacy (version 2.16 or below) CMake
+
+For legacy MCUX SDK legacy projects using CMake, add the following lines to your application's CMake:
+
 ```cmake
 set(RTOS_DIR <FreeRTOS Kernel directory>)
 set(FREERTOS_PORT <FreeRTOS Kernel Port Folder>)
