@@ -1,5 +1,5 @@
 /*
- * Copyright 2024-2025 NXP
+ * Copyright 2024-2026 NXP
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -20,19 +20,17 @@ int rtos_thread_create(rtos_thread_t *thread, unsigned int priority, unsigned in
                        void (*start_routine)(void *arg), void *arg)
 {
     int thread_priority;
-    size_t stack_depth;
     k_tid_t thread_id;
     int ret;
 
-    stack_depth = Z_KERNEL_STACK_SIZE_ADJUST(stack_size * sizeof(WORD));
     thread_priority = ((CONFIG_NUM_PREEMPT_PRIORITIES - 1) - priority);
     thread_priority = (thread_priority < 0)? 0: thread_priority;
 
-    thread->stack = k_aligned_alloc(Z_KERNEL_STACK_OBJ_ALIGN, stack_depth);
+    thread->stack = k_thread_stack_alloc(stack_size, 0);
     if (!thread->stack)
        goto err_alloc;
 
-    thread_id = k_thread_create(&thread->thread, thread->stack, stack_depth,
+    thread_id = k_thread_create(&thread->thread, thread->stack, stack_size,
                                  &rtos_thread_callback, start_routine, arg, NULL,
                                  thread_priority, 0, K_FOREVER);
     if (!thread_id)

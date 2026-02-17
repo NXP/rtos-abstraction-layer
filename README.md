@@ -64,4 +64,10 @@ include(${RTOS_ABSTRACTION_LAYER_DIR}/rtos_abstraction_layer.cmake)
 
 Sources will be added to the specified target, as well as required headers.
 
+And add the following Kconfig options:
+```
+CONFIG_DYNAMIC_THREAD=y
+CONFIG_DYNAMIC_THREAD_ALLOC=y
+```
+
 To use the abstraction layer, include the top header file: 'rtos_abstraction_layer.h'
