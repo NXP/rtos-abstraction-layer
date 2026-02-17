@@ -1,5 +1,5 @@
 /*
- * Copyright 2024-2025 NXP
+ * Copyright 2024-2026 NXP
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -10,7 +10,7 @@
 #include <zephyr/kernel.h>
 
 #define RTOS_MAX_PRIORITY CONFIG_NUM_PREEMPT_PRIORITIES
-#define RTOS_MINIMAL_STACK_SIZE 2048
+#define RTOS_MINIMAL_STACK_SIZE 1024
 
 typedef struct {
     struct k_thread thread;
