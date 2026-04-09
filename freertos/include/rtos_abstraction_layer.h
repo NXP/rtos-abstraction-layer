@@ -1,5 +1,5 @@
 /*
-* Copyright 2023-2024 NXP
+* Copyright 2023-2024, 2026 NXP
 *
 * SPDX-License-Identifier: BSD-3-Clause
 */
@@ -17,6 +17,7 @@
 #include "rtos_atomic.h"
 #include "rtos_event_group.h"
 #include "rtos_heap.h"
+#include "rtos_net_heap.h"
 #include "rtos_mutex.h"
 #include "rtos_time.h"
 #include "rtos_mqueue.h"
