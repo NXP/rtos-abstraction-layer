@@ -21,7 +21,6 @@ int rtos_thread_create(rtos_thread_t *thread, unsigned int priority, unsigned in
 {
     int thread_priority;
     k_tid_t thread_id;
-    int ret;
 
     thread_priority = ((CONFIG_NUM_PREEMPT_PRIORITIES - 1) - priority);
     thread_priority = (thread_priority < 0)? 0: thread_priority;
@@ -39,9 +38,10 @@ int rtos_thread_create(rtos_thread_t *thread, unsigned int priority, unsigned in
     if (name)
         k_thread_name_set(thread_id, name);
 
-    ret = k_thread_cpu_pin(thread_id, affinity);
-    if (ret < 0)
+#if defined(CONFIG_SCHED_CPU_MASK)
+    if (k_thread_cpu_pin(thread_id, affinity) < 0)
         goto err;
+#endif
 
     k_thread_start(thread_id);
 
