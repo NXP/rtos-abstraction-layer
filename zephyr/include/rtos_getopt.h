@@ -37,4 +37,14 @@ void rtos_getopt_init(int optind);
  */
 int rtos_getopt(int argc, char *const argv[], const char *optstring);
 
+/** Get the current option argument.
+ *
+ * This function returns the option argument associated with the most recent
+ * successful getopt parsing step.
+ *
+ * \ingroup rtos_getopt
+ * \return Pointer to the current option argument.
+ */
+char *rtos_getopt_optarg(void);
+
 #endif /* #ifndef _RTOS_ABSTRACTION_LAYER_GETOPT_H_ */

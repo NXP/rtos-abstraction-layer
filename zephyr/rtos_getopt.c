@@ -32,3 +32,12 @@ int rtos_getopt(int argc, char *const argv[], const char *optstring)
 {
     return sys_getopt(argc, argv, optstring);
 }
+
+char *rtos_getopt_optarg(void)
+{
+    struct sys_getopt_state *state;
+
+    state = sys_getopt_state_get();
+
+    return state->optarg;
+}
