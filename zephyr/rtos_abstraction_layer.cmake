@@ -10,6 +10,7 @@ include_guard(GLOBAL)
 message("rtos_abstraction_layer_zephyr sources are included for target ${RTOS_ABSTRACTION_LAYER_TARGET}")
 
 target_sources(${RTOS_ABSTRACTION_LAYER_TARGET} PRIVATE
+    ${CMAKE_CURRENT_LIST_DIR}/rtos_getopt.c
     ${CMAKE_CURRENT_LIST_DIR}/rtos_mqueue.c
     ${CMAKE_CURRENT_LIST_DIR}/rtos_net_heap.c
     ${CMAKE_CURRENT_LIST_DIR}/rtos_sched.c

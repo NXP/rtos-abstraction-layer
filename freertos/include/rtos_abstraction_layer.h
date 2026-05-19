@@ -16,6 +16,7 @@
 #include "rtos_assert.h"
 #include "rtos_atomic.h"
 #include "rtos_event_group.h"
+#include "rtos_getopt.h"
 #include "rtos_heap.h"
 #include "rtos_net_heap.h"
 #include "rtos_mutex.h"
