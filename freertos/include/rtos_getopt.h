@@ -32,4 +32,20 @@ static inline void rtos_getopt_init(int _optind, int _opterr)
     opterr = _opterr;
 }
 
+/** Parse command line options.
+ *
+ * This function parses command line options using the underlying RTOS
+ * getopt implementation.
+ *
+ * \ingroup rtos_getopt
+ * \return Option character on success, -1 when parsing is complete.
+ * \param argc Argument count.
+ * \param argv Argument vector.
+ * \param optstring String containing the legitimate option characters.
+ */
+static inline int rtos_getopt(int argc, char *const argv[], const char *optstring)
+{
+    return getopt(argc, argv, optstring);
+}
+
 #endif /* #ifndef _RTOS_ABSTRACTION_LAYER_GETOPT_H_ */
