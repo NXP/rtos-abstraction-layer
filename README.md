@@ -14,6 +14,7 @@ Supported RTOS services
 - memory heap
 - atomic operations
 - basic standard output
+- getopt abstraction
 
 Using the RTOS Abstraction Layer
 --------------------------------
@@ -68,6 +69,8 @@ And add the following Kconfig options:
 ```
 CONFIG_DYNAMIC_THREAD=y
 CONFIG_DYNAMIC_THREAD_ALLOC=y
+
+CONFIG_SHELL_GETOPT=y
 ```
 
 To use the abstraction layer, include the top header file: 'rtos_abstraction_layer.h'
