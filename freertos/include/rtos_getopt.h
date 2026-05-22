@@ -17,19 +17,16 @@
 
 /** Initialize getopt parsing state.
  *
- * This function initializes getopt parsing state from the provided values.
+ * This function initializes the standard C library getopt parsing
+ * state from the provided value.
  *
  * \ingroup rtos_getopt
  * \param _optind Argument index to use as parsing start position.
- * \param _opterr Control whether getopt prints error messages.
  *
- * \note On FreeRTOS builds using the standard C library getopt
- * implementation, this function updates the global getopt state.
  */
-static inline void rtos_getopt_init(int _optind, int _opterr)
+static inline void rtos_getopt_init(int _optind)
 {
     optind = _optind;
-    opterr = _opterr;
 }
 
 /** Parse command line options.
