@@ -1,0 +1,36 @@
+{
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "spdxVersion": "SPDX-2.3",
+  "creationInfo": {
+    "created": "2026-06-25T10:30:17Z",
+    "creators": [
+      "Organization: NXP"
+    ],
+    "licenseListVersion": "3.28"
+  },
+  "name": "rtos-abstraction-layer-rtos-abstraction-layer--1_8",
+  "dataLicense": "CC0-1.0",
+  "documentNamespace": "https://nxp.com/spdx/1463d454-0015-4321-8377-c5c32cff1965",
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-package-1463d454-0015-4321-8377-c5c32cff1965",
+      "name": "rtos-abstraction-layer",
+      "versionInfo": "rtos-abstraction-layer--1_8",
+      "licenseConcluded": "(BSD-3-Clause)",
+      "licenseDeclared": "(BSD-3-Clause)",
+      "downloadLocation": "https://github.com/NXP/rtos-abstraction-layer",
+      "originator": "Organization: NXP",
+      "supplier": "NOASSERTION",
+      "externalRefs": [],
+      "filesAnalyzed": false
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-package-1463d454-0015-4321-8377-c5c32cff1965"
+    }
+  ]
+}
+
